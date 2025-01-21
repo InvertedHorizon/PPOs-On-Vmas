@@ -164,18 +164,6 @@ policy = ProbabilisticActor(
     log_prob_key=("agents", "sample_log_prob"),  # 存储对数概率的键
 )
 
-# critic_net = MultiAgentMLP(
-#     n_agent_inputs=env.observation_spec["agents", "observation"].shape[-1],
-#     n_agent_outputs=1,  # 每个智能体的输出为 1 个值
-#     n_agents=env.n_agents,
-#     centralised=mappo,
-#     share_params=share_parameters_critic,
-#     device=device,
-#     depth=2,
-#     num_cells=256,
-#     activation_class=torch.nn.Tanh,
-# )
-
 # 定义评论家网络
 critic_net = MultiAgentMLP(
     n_agent_inputs=env.observation_spec["agents", "observation"].shape[-1],
